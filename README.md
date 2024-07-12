@@ -1,4 +1,3 @@
-Berikut adalah README yang telah disesuaikan dengan fitur utama yang diminta:
 
 ---
 
