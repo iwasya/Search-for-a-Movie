@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Info</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .movie-info {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .movie-info h2 {
+            margin-top: 0;
+        }
+        .movie-info p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .movie-info img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <h1>Search for a Movie</h1>
+    <form method="post">
+        <input type="text" name="movie_title" placeholder="Enter movie title" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if movie_info %}
+    <div class="movie-info">
+        <h2>Movie Information</h2>
+        <p><strong>Title:</strong> {{ movie_info.Title }}</p>
+        <p><strong>Year:</strong> {{ movie_info.Year }}</p>
+        <p><strong>Rated:</strong> {{ movie_info.Rated }}</p>
+        <p><strong>Released:</strong> {{ movie_info.Released }}</p>
+        <p><strong>Runtime:</strong> {{ movie_info.Runtime }}</p>
+        <p><strong>Genre:</strong> {{ movie_info.Genre }}</p>
+        <p><strong>Director:</strong> {{ movie_info.Director }}</p>
+        <p><strong>Writer:</strong> {{ movie_info.Writer }}</p>
+        <p><strong>Actors:</strong> {{ movie_info.Actors }}</p>
+        <p><strong>Plot:</strong> {{ movie_info.Plot }}</p>
+        <p><strong>Language:</strong> {{ movie_info.Language }}</p>
+        <p><strong>Country:</strong> {{ movie_info.Country }}</p>
+        <p><strong>Awards:</strong> {{ movie_info.Awards }}</p>
+        <p><strong>Poster:</strong><br><img src="{{ movie_info.Poster }}" alt="Poster"></p>
+    </div>
+    {% endif %}
+</body>
+<footer>
+    <p>&copy; 2024 Iwasya. All Rights Reserved.</p>
+</footer>
+</html>
